@@ -12,4 +12,10 @@ const getById = async (req, res) => {
   return res.status(200).json(message);
 };
 
-module.exports = { getAll, getById };
+const registerNewSale = async (req, res) => {
+  const sales = req.body;
+  const { message } = await salesService.registerNewSale(sales);
+  return res.status(201).json(message);
+};
+
+module.exports = { getAll, getById, registerNewSale };

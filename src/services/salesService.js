@@ -22,4 +22,9 @@ const getById = async (id) => {
   return { type: null, message: saleFormat };
 };
 
-module.exports = { getAll, getById };
+const registerNewSale = async (sales) => {
+  const result = await salesModel.registerNewSale(sales);
+  return { type: null, message: result };
+};
+
+module.exports = { getAll, getById, registerNewSale };
